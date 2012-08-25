@@ -1,22 +1,19 @@
 //
-//  ButlerSecondViewController.m
+//  ButlerScheduleViewController.m
 //  SchoolButler
 //
 //  Created by Leland Long on 8/25/12.
-//  Copyright (c) 2012 Keller Interiors, Inc. All rights reserved.
 //
 
-#import "ButlerSecondViewController.h"
+#import "ButlerScheduleViewController.h"
 
-@implementation ButlerSecondViewController
+@implementation ButlerScheduleViewController
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
-}
+
 
 #pragma mark - View lifecycle
+
+
 
 - (void)viewDidLoad
 {

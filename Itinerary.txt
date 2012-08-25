@@ -1,0 +1,45 @@
+Schedule
+Classes
+Dates/times
+
+
+   Transcripts
+   classes
+   dates
+   grade
+
+
+
+
+Projects (Create/review)
+tied to class
+cStatus (pending/dueNextDay/completed/overdue)
+Due date
+Status (Active / OnHold / Drop)
+Materials needed (v)
+Notes
+grade
+
+
+
+
+
+
+Materials
+qty needed
+qty acquired
+source
+notes
+
+
+
+
+
+
+
+Events (tests, non-project class items)
+tied to class
+subject/category
+List Flagged
+cList Overdue
+cList Today

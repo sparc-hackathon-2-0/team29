@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84092CE815E9326200FE68D9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84092CE715E9326200FE68D9 /* CoreData.framework */; };
+		84092CF815E968B300FE68D9 /* ButlerProjectsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84092CF715E968B300FE68D9 /* ButlerProjectsDetailViewController.m */; };
 		8471563515E919F700C15D2C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8471563415E919F700C15D2C /* UIKit.framework */; };
 		8471563715E919F700C15D2C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8471563615E919F700C15D2C /* Foundation.framework */; };
 		8471563915E919F700C15D2C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8471563815E919F700C15D2C /* CoreGraphics.framework */; };
@@ -14,34 +16,56 @@
 		8471564115E919F700C15D2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8471564015E919F700C15D2C /* main.m */; };
 		8471564515E919F700C15D2C /* ButlerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8471564415E919F700C15D2C /* ButlerAppDelegate.m */; };
 		8471564815E919F700C15D2C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8471564615E919F700C15D2C /* MainStoryboard.storyboard */; };
-		8471564B15E919F700C15D2C /* ButlerFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8471564A15E919F700C15D2C /* ButlerFirstViewController.m */; };
+		8471564B15E919F700C15D2C /* ButlerProjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8471564A15E919F700C15D2C /* ButlerProjectsViewController.m */; };
 		8471564D15E919F700C15D2C /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 8471564C15E919F700C15D2C /* first.png */; };
 		8471564F15E919F700C15D2C /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8471564E15E919F700C15D2C /* first@2x.png */; };
-		8471565215E919F700C15D2C /* ButlerSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8471565115E919F700C15D2C /* ButlerSecondViewController.m */; };
+		8471565215E919F700C15D2C /* ButlerEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8471565115E919F700C15D2C /* ButlerEventsViewController.m */; };
 		8471565415E919F700C15D2C /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 8471565315E919F700C15D2C /* second.png */; };
 		8471565615E919F700C15D2C /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8471565515E919F700C15D2C /* second@2x.png */; };
+		8471565F15E91A6B00C15D2C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8471565E15E91A6B00C15D2C /* Default.png */; };
+		8471566115E91C6A00C15D2C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8471566015E91C6A00C15D2C /* Default@2x.png */; };
+		8471566315E91D6800C15D2C /* Icon_reg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8471566215E91D6800C15D2C /* Icon_reg.png */; };
+		8471566515E91D8A00C15D2C /* Icon_ret.png in Resources */ = {isa = PBXBuildFile; fileRef = 8471566415E91D8A00C15D2C /* Icon_ret.png */; };
+		8471567715E924A200C15D2C /* ButlerClassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8471567215E924A200C15D2C /* ButlerClassesViewController.m */; };
+		8471567815E924A200C15D2C /* ButlerScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8471567415E924A200C15D2C /* ButlerScheduleViewController.m */; };
+		8471567915E924A200C15D2C /* ButlerTranscriptsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8471567615E924A200C15D2C /* ButlerTranscriptsViewController.m */; };
+		8471568015E930A100C15D2C /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8471567E15E930A100C15D2C /* CoreDataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84092CE715E9326200FE68D9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		84092CF615E968B300FE68D9 /* ButlerProjectsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButlerProjectsDetailViewController.h; sourceTree = "<group>"; };
+		84092CF715E968B300FE68D9 /* ButlerProjectsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButlerProjectsDetailViewController.m; sourceTree = "<group>"; };
 		8471563015E919F700C15D2C /* SchoolButler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolButler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8471563415E919F700C15D2C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8471563615E919F700C15D2C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8471563815E919F700C15D2C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		8471563C15E919F700C15D2C /* SchoolButler-Info.plist */ = {isa = PBXFileReference; path = "SchoolButler-Info.plist"; sourceTree = "<group>"; };
+		8471563C15E919F700C15D2C /* SchoolButler-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SchoolButler-Info.plist"; sourceTree = "<group>"; };
 		8471563E15E919F700C15D2C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8471564015E919F700C15D2C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8471564215E919F700C15D2C /* SchoolButler-Prefix.pch */ = {isa = PBXFileReference; path = "SchoolButler-Prefix.pch"; sourceTree = "<group>"; };
-		8471564315E919F700C15D2C /* ButlerAppDelegate.h */ = {isa = PBXFileReference; path = ButlerAppDelegate.h; sourceTree = "<group>"; };
+		8471564215E919F700C15D2C /* SchoolButler-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SchoolButler-Prefix.pch"; sourceTree = "<group>"; };
+		8471564315E919F700C15D2C /* ButlerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButlerAppDelegate.h; sourceTree = "<group>"; };
 		8471564415E919F700C15D2C /* ButlerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButlerAppDelegate.m; sourceTree = "<group>"; };
 		8471564715E919F700C15D2C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		8471564915E919F700C15D2C /* ButlerFirstViewController.h */ = {isa = PBXFileReference; path = ButlerFirstViewController.h; sourceTree = "<group>"; };
-		8471564A15E919F700C15D2C /* ButlerFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButlerFirstViewController.m; sourceTree = "<group>"; };
+		8471564915E919F700C15D2C /* ButlerProjectsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButlerProjectsViewController.h; sourceTree = "<group>"; };
+		8471564A15E919F700C15D2C /* ButlerProjectsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButlerProjectsViewController.m; sourceTree = "<group>"; };
 		8471564C15E919F700C15D2C /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		8471564E15E919F700C15D2C /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		8471565015E919F700C15D2C /* ButlerSecondViewController.h */ = {isa = PBXFileReference; path = ButlerSecondViewController.h; sourceTree = "<group>"; };
-		8471565115E919F700C15D2C /* ButlerSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButlerSecondViewController.m; sourceTree = "<group>"; };
+		8471565015E919F700C15D2C /* ButlerEventsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButlerEventsViewController.h; sourceTree = "<group>"; };
+		8471565115E919F700C15D2C /* ButlerEventsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButlerEventsViewController.m; sourceTree = "<group>"; };
 		8471565315E919F700C15D2C /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		8471565515E919F700C15D2C /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		8471565E15E91A6B00C15D2C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		8471566015E91C6A00C15D2C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		8471566215E91D6800C15D2C /* Icon_reg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_reg.png; sourceTree = "<group>"; };
+		8471566415E91D8A00C15D2C /* Icon_ret.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_ret.png; sourceTree = "<group>"; };
+		8471567115E924A200C15D2C /* ButlerClassesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButlerClassesViewController.h; sourceTree = "<group>"; };
+		8471567215E924A200C15D2C /* ButlerClassesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButlerClassesViewController.m; sourceTree = "<group>"; };
+		8471567315E924A200C15D2C /* ButlerScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButlerScheduleViewController.h; sourceTree = "<group>"; };
+		8471567415E924A200C15D2C /* ButlerScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButlerScheduleViewController.m; sourceTree = "<group>"; };
+		8471567515E924A200C15D2C /* ButlerTranscriptsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButlerTranscriptsViewController.h; sourceTree = "<group>"; };
+		8471567615E924A200C15D2C /* ButlerTranscriptsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButlerTranscriptsViewController.m; sourceTree = "<group>"; };
+		8471567F15E930A100C15D2C /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +76,7 @@
 				8471563515E919F700C15D2C /* UIKit.framework in Frameworks */,
 				8471563715E919F700C15D2C /* Foundation.framework in Frameworks */,
 				8471563915E919F700C15D2C /* CoreGraphics.framework in Frameworks */,
+				84092CE815E9326200FE68D9 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +86,10 @@
 		8471562515E919F600C15D2C = {
 			isa = PBXGroup;
 			children = (
+				8471566415E91D8A00C15D2C /* Icon_ret.png */,
+				8471566215E91D6800C15D2C /* Icon_reg.png */,
+				8471566015E91C6A00C15D2C /* Default@2x.png */,
+				8471565E15E91A6B00C15D2C /* Default.png */,
 				8471563A15E919F700C15D2C /* SchoolButler */,
 				8471563315E919F700C15D2C /* Frameworks */,
 				8471563115E919F700C15D2C /* Products */,
@@ -78,6 +107,7 @@
 		8471563315E919F700C15D2C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84092CE715E9326200FE68D9 /* CoreData.framework */,
 				8471563415E919F700C15D2C /* UIKit.framework */,
 				8471563615E919F700C15D2C /* Foundation.framework */,
 				8471563815E919F700C15D2C /* CoreGraphics.framework */,
@@ -91,14 +121,19 @@
 				8471564315E919F700C15D2C /* ButlerAppDelegate.h */,
 				8471564415E919F700C15D2C /* ButlerAppDelegate.m */,
 				8471564615E919F700C15D2C /* MainStoryboard.storyboard */,
-				8471564915E919F700C15D2C /* ButlerFirstViewController.h */,
-				8471564A15E919F700C15D2C /* ButlerFirstViewController.m */,
-				8471564C15E919F700C15D2C /* first.png */,
-				8471564E15E919F700C15D2C /* first@2x.png */,
-				8471565015E919F700C15D2C /* ButlerSecondViewController.h */,
-				8471565115E919F700C15D2C /* ButlerSecondViewController.m */,
-				8471565315E919F700C15D2C /* second.png */,
-				8471565515E919F700C15D2C /* second@2x.png */,
+				8471567E15E930A100C15D2C /* CoreDataModel.xcdatamodeld */,
+				8471564915E919F700C15D2C /* ButlerProjectsViewController.h */,
+				8471564A15E919F700C15D2C /* ButlerProjectsViewController.m */,
+				84092CF615E968B300FE68D9 /* ButlerProjectsDetailViewController.h */,
+				84092CF715E968B300FE68D9 /* ButlerProjectsDetailViewController.m */,
+				8471565015E919F700C15D2C /* ButlerEventsViewController.h */,
+				8471565115E919F700C15D2C /* ButlerEventsViewController.m */,
+				8471567315E924A200C15D2C /* ButlerScheduleViewController.h */,
+				8471567415E924A200C15D2C /* ButlerScheduleViewController.m */,
+				8471567115E924A200C15D2C /* ButlerClassesViewController.h */,
+				8471567215E924A200C15D2C /* ButlerClassesViewController.m */,
+				8471567515E924A200C15D2C /* ButlerTranscriptsViewController.h */,
+				8471567615E924A200C15D2C /* ButlerTranscriptsViewController.m */,
 				8471563B15E919F700C15D2C /* Supporting Files */,
 			);
 			path = SchoolButler;
@@ -107,12 +142,24 @@
 		8471563B15E919F700C15D2C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8471566B15E9235A00C15D2C /* Images */,
 				8471563C15E919F700C15D2C /* SchoolButler-Info.plist */,
 				8471563D15E919F700C15D2C /* InfoPlist.strings */,
 				8471564015E919F700C15D2C /* main.m */,
 				8471564215E919F700C15D2C /* SchoolButler-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8471566B15E9235A00C15D2C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8471564C15E919F700C15D2C /* first.png */,
+				8471564E15E919F700C15D2C /* first@2x.png */,
+				8471565315E919F700C15D2C /* second.png */,
+				8471565515E919F700C15D2C /* second@2x.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +219,10 @@
 				8471564F15E919F700C15D2C /* first@2x.png in Resources */,
 				8471565415E919F700C15D2C /* second.png in Resources */,
 				8471565615E919F700C15D2C /* second@2x.png in Resources */,
+				8471565F15E91A6B00C15D2C /* Default.png in Resources */,
+				8471566115E91C6A00C15D2C /* Default@2x.png in Resources */,
+				8471566315E91D6800C15D2C /* Icon_reg.png in Resources */,
+				8471566515E91D8A00C15D2C /* Icon_ret.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,8 +235,13 @@
 			files = (
 				8471564115E919F700C15D2C /* main.m in Sources */,
 				8471564515E919F700C15D2C /* ButlerAppDelegate.m in Sources */,
-				8471564B15E919F700C15D2C /* ButlerFirstViewController.m in Sources */,
-				8471565215E919F700C15D2C /* ButlerSecondViewController.m in Sources */,
+				8471564B15E919F700C15D2C /* ButlerProjectsViewController.m in Sources */,
+				8471565215E919F700C15D2C /* ButlerEventsViewController.m in Sources */,
+				8471567715E924A200C15D2C /* ButlerClassesViewController.m in Sources */,
+				8471567815E924A200C15D2C /* ButlerScheduleViewController.m in Sources */,
+				8471567915E924A200C15D2C /* ButlerTranscriptsViewController.m in Sources */,
+				8471568015E930A100C15D2C /* CoreDataModel.xcdatamodeld in Sources */,
+				84092CF815E968B300FE68D9 /* ButlerProjectsDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,8 +353,23 @@
 				8471565B15E919F700C15D2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8471567E15E930A100C15D2C /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8471567F15E930A100C15D2C /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 8471567F15E930A100C15D2C /* CoreDataModel.xcdatamodel */;
+			name = CoreDataModel.xcdatamodeld;
+			path = ../CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8471562715E919F600C15D2C /* Project object */;
 }

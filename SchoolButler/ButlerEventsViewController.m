@@ -1,22 +1,19 @@
 //
-//  ButlerFirstViewController.m
+//  ButlerEventsViewController.m
 //  SchoolButler
 //
 //  Created by Leland Long on 8/25/12.
-//  Copyright (c) 2012 Keller Interiors, Inc. All rights reserved.
 //
 
-#import "ButlerFirstViewController.h"
+#import "ButlerEventsViewController.h"
 
-@implementation ButlerFirstViewController
+@implementation ButlerEventsViewController
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
-}
+
 
 #pragma mark - View lifecycle
+
+
 
 - (void)viewDidLoad
 {
