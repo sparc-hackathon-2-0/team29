@@ -12,6 +12,41 @@
 @implementation ButlerProjectsViewController
 
 @synthesize projectIDArray, projectTitleArray, projectDueDateArray;
+@synthesize addProjectFlag;
+
+
+
+#pragma mark - Add button
+
+
+
+- (IBAction)handleAddButton:(id)sender
+{
+
+        NSString *message = [[NSString alloc] initWithFormat:@"Create a new Project?"];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Confirm" message:message delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
+        [alert show];
+    
+}
+
+
+
+#pragma mark - Alert Delegate methods
+
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.title == @"Confirm") {
+        if (buttonIndex == 0) { 
+            // Cancel button
+        } else if (buttonIndex == 1) { 
+            // Yes button
+            addProjectFlag = YES;
+            [self performSegueWithIdentifier:@"ProjectDetail" sender:self];
+        }
+    }
+}
 
 
 
@@ -58,7 +93,11 @@
     {
         ButlerProjectsDetailViewController *vc = [segue destinationViewController];
         NSIndexPath *path = [self.tableView indexPathForSelectedRow];
-        vc.incomingRow = path.row + 1;  // index starts at 0, ID's start at 1
+        if (addProjectFlag) {
+            vc.incomingRow = 0;  // flag for new Project
+        } else {
+            vc.incomingRow = path.row + 1;  // index starts at 0, ID's start at 1
+        }
     }
 }
 
@@ -67,15 +106,6 @@
 #pragma mark - View lifecycle
 
 
-
-- (void)viewDidLoad
-{
-    UIApplication *app = [UIApplication sharedApplication];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(applicationWillResignActive:)
-                                                 name:UIApplicationWillResignActiveNotification
-                                               object:app];
-}
 
 - (void)viewDidUnload
 {
@@ -87,6 +117,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    addProjectFlag = NO;
     
     // Load data from CoreData into local Model
     ButlerAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
@@ -137,33 +169,6 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-}
-
-- (void)applicationWillResignActive:(NSNotification *)notification {
-//    ButlerAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-//    NSManagedObjectContext *context = [appDelegate managedObjectContext];
-//    NSError *error;
-//    
-//    // send data to model
-//    for (int i = 1; i <= 10; i++) {      
-//        NSManagedObject *theLine = nil;
-//        theLine = [NSEntityDescription insertNewObjectForEntityForName:@"Projects" inManagedObjectContext:context];
-//        [theLine setValue:[NSNumber numberWithInt:i] forKey:@"kp_ProjectID"];
-//        [theLine setValue:[NSString stringWithFormat:@"Title %d", i] forKey:@"projectTitle"];
-//        
-//        // convert string to date
-//        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//        NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
-//        [dateFormatter setLocale:enUSPOSIXLocale];
-//        [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
-//        [dateFormatter setDateFormat:@"MM/dd/yy"];
-//        NSDate *dateFromString = [[NSDate alloc] init];
-//        dateFromString = [dateFormatter dateFromString:@"8/1/12"];
-//        
-//        [theLine setValue:dateFromString forKey:@"dueDate"];
-//    }
-//    [context save:&error];
-//    NSLog(@"appWillRegign - error %@", error);
 }
 
 @end

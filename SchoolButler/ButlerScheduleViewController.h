@@ -7,6 +7,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ButlerScheduleViewController : UIViewController
+@interface ButlerScheduleViewController : UITableViewController <UITableViewDataSource>
+
+// coreData
+@property (nonatomic, strong) NSMutableArray *classIDArray;
+@property (nonatomic, strong) NSMutableArray *classTitleArray;
+@property (nonatomic, strong) NSMutableArray *classEndDateArray;
+
+// local ivars
+@property BOOL addProjectFlag;
 
 @end

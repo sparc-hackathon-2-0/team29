@@ -6,20 +6,51 @@
 //
 
 #import "ButlerScheduleViewController.h"
+#import "ButlerAppDelegate.h"
 
 @implementation ButlerScheduleViewController
+
+@synthesize classIDArray, classTitleArray, classEndDateArray;
+@synthesize addProjectFlag;
+
+
+
+#pragma mark - Table view data source
+
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return [classIDArray count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"ScheduleCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    // Configure the cell...
+    if ([classIDArray count] > 0) {
+        cell.textLabel.text = [NSString stringWithFormat:@"%@", [classTitleArray objectAtIndex:indexPath.row]];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [classEndDateArray objectAtIndex:indexPath.row]];
+    } else {
+        cell.textLabel.text = @"event not found";
+    }
+    
+    
+    
+    return cell;
+}
 
 
 
 #pragma mark - View lifecycle
 
 
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
 
 - (void)viewDidUnload
 {
@@ -31,6 +62,37 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    addProjectFlag = NO;
+    
+    // Load data from CoreData into local Model
+    ButlerAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Classes" inManagedObjectContext:context];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"kp_ClassID" ascending:YES];
+    [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    [request setEntity:entityDescription];
+    NSError *error;
+    NSArray *objects = [context executeFetchRequest:request error:&error];
+    if (objects == nil) {
+        NSLog(@"Error, viewDidLoad - no objects returned!");
+    } else {
+        // compile local array
+        classIDArray = [[NSMutableArray alloc] initWithCapacity:1];
+        classTitleArray = [[NSMutableArray alloc] initWithCapacity:1];
+        classEndDateArray = [[NSMutableArray alloc] initWithCapacity:1];
+        for (NSManagedObject *oneObject in objects) {
+            [classIDArray addObject:[oneObject valueForKey:@"kp_ClassID"]];
+            [classTitleArray addObject:[oneObject valueForKey:@"theClassName"]];
+            
+            NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+            [dateFormat setDateFormat:@"MM/dd/yy"];
+            NSString *dateString = [dateFormat stringFromDate:[oneObject valueForKey:@"endDate"]];
+            [classEndDateArray addObject:dateString];
+        }
+    }
+    [self.tableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated

@@ -7,6 +7,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ButlerClassesViewController : UIViewController
+@interface ButlerClassesViewController : UITableViewController <UITableViewDataSource>
+
+// coreData
+@property (nonatomic, strong) NSMutableArray *classIDArray;
+@property (nonatomic, strong) NSMutableArray *classTitleArray;
+@property (nonatomic, strong) NSMutableArray *classEndDateArray;
+
+// local ivars
+@property BOOL addProjectFlag;
+
+- (IBAction)handleAddButton:(id)sender;
 
 @end

@@ -7,6 +7,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ButlerEventsViewController : UIViewController
+@interface ButlerEventsViewController : UITableViewController <UITableViewDataSource>
+
+// coreData
+@property (nonatomic, strong) NSMutableArray *eventIDArray;
+@property (nonatomic, strong) NSMutableArray *eventTitleArray;
+@property (nonatomic, strong) NSMutableArray *eventEndDateArray;
+
+// local ivars
+@property BOOL addProjectFlag;
+
+- (IBAction)handleAddButton:(id)sender;
 
 @end

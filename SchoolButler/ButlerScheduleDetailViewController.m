@@ -1,34 +1,34 @@
 //
-//  ButlerProjectsDetailViewController.m
+//  ButlerEventsDetailViewController.m
 //  SchoolButler
 //
 //  Created by Leland Long on 8/25/12.
 //
 
-#import "ButlerProjectsDetailViewController.h"
+#import "ButlerScheduleDetailViewController.h"
 #import "ButlerAppDelegate.h"
 
 
 
-int const ProjectsDetailTextFieldCount = 3;
+int const ScheduleDetailTextFieldCount = 3;
 
 
 
-@implementation ButlerProjectsDetailViewController
+@implementation ButlerScheduleDetailViewController
 
-@synthesize titleField, startDateField, dueDateField;
+@synthesize titleField, startDateField, endDateField;
 @synthesize incomingRow, storedButton, textFieldBeingEdited, textFieldOriginalValues, datePicker;
-@synthesize projectID, projectTitle, projectStartDate, projectDueDate;
+@synthesize classID, className, classStartDate, classEndDate;
 
 
 
-#pragma mark - New Project
+#pragma mark - New Event
 
 
 
-- (void)createNewProject
+- (void)createNewEvent
 {
-    NSLog(@"createNewProject...");
+    NSLog(@"createNewEvent...");
     [self.titleField becomeFirstResponder];
 }
 
@@ -53,45 +53,45 @@ int const ProjectsDetailTextFieldCount = 3;
 
 - (void) showDatePicker:(id)sender {
     // iPhone uses a UIDatePicker added to a UIActionSheet, this controller acting as dataSource and delegate for the picker
-        UIActionSheet *menu = [[UIActionSheet alloc] initWithTitle:textFieldBeingEdited.text delegate:self cancelButtonTitle:@"Save" destructiveButtonTitle:@"Cancel" otherButtonTitles:nil];
-        datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0,185,0,0)];
-        datePicker.datePickerMode = UIDatePickerModeDate;
-        
-        [menu addSubview:datePicker];
-        [menu showFromTabBar:self.tabBarController.tabBar];
-        switch (self.interfaceOrientation) {
-            case UIInterfaceOrientationPortrait:
-                [menu setBounds:CGRectMake(0,0,320, 700)];
-                break;
-                
-            case UIInterfaceOrientationPortraitUpsideDown:
-                [menu setBounds:CGRectMake(0,0,320, 700)];
-                break;
-                
-            case UIInterfaceOrientationLandscapeLeft:
-                [menu setBounds:CGRectMake(0,0,480, 460)];
-                break;
-                
-            case UIInterfaceOrientationLandscapeRight:
-                [menu setBounds:CGRectMake(0,0,480, 460)];
-                break;
-        }
-        
-        UITextField *theField = sender;
-        NSString *dateString = [[NSString alloc] initWithString:theField.text];
-        if (![dateString isEqualToString:@""]) {
-            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
-            [dateFormatter setLocale:enUSPOSIXLocale];
-            [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
-            [dateFormatter setDateFormat:@"MM/dd/yy"];
-            NSDate *dateFromString = [[NSDate alloc] init];
-            dateFromString = [dateFormatter dateFromString:dateString];
-            
-            [datePicker setDate:dateFromString animated:YES];
-        }
+    UIActionSheet *menu = [[UIActionSheet alloc] initWithTitle:textFieldBeingEdited.text delegate:self cancelButtonTitle:@"Save" destructiveButtonTitle:@"Cancel" otherButtonTitles:nil];
+    datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0,185,0,0)];
+    datePicker.datePickerMode = UIDatePickerModeDate;
     
-   
+    [menu addSubview:datePicker];
+    [menu showFromTabBar:self.tabBarController.tabBar];
+    switch (self.interfaceOrientation) {
+        case UIInterfaceOrientationPortrait:
+            [menu setBounds:CGRectMake(0,0,320, 700)];
+            break;
+            
+        case UIInterfaceOrientationPortraitUpsideDown:
+            [menu setBounds:CGRectMake(0,0,320, 700)];
+            break;
+            
+        case UIInterfaceOrientationLandscapeLeft:
+            [menu setBounds:CGRectMake(0,0,480, 460)];
+            break;
+            
+        case UIInterfaceOrientationLandscapeRight:
+            [menu setBounds:CGRectMake(0,0,480, 460)];
+            break;
+    }
+    
+    UITextField *theField = sender;
+    NSString *dateString = [[NSString alloc] initWithString:theField.text];
+    if (![dateString isEqualToString:@""]) {
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+        [dateFormatter setLocale:enUSPOSIXLocale];
+        [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
+        [dateFormatter setDateFormat:@"MM/dd/yy"];
+        NSDate *dateFromString = [[NSDate alloc] init];
+        dateFromString = [dateFormatter dateFromString:dateString];
+        
+        [datePicker setDate:dateFromString animated:YES];
+    }
+    
+    
 }
 
 
@@ -102,7 +102,7 @@ int const ProjectsDetailTextFieldCount = 3;
 
 - (void)resetTextFieldsToOriginalValues
 {
-    for (int index = 0; index < ProjectsDetailTextFieldCount; index++) {
+    for (int index = 0; index < ScheduleDetailTextFieldCount; index++) {
         switch (index) {
             case 0:
                 titleField.text = [textFieldOriginalValues objectAtIndex:index];
@@ -113,7 +113,7 @@ int const ProjectsDetailTextFieldCount = 3;
                 break;
                 
             case 2:
-                dueDateField.text = [textFieldOriginalValues objectAtIndex:index];
+                endDateField.text = [textFieldOriginalValues objectAtIndex:index];
                 break;
                 
             default:
@@ -135,8 +135,8 @@ int const ProjectsDetailTextFieldCount = 3;
     if ([startDateField.text isEqualToString:@""]) {
         startDateField.text = rawStr;
     }
-    if ([dueDateField.text isEqualToString:@""]) {
-        dueDateField.text = rawStr;
+    if ([endDateField.text isEqualToString:@""]) {
+        endDateField.text = rawStr;
     }
     
     // create/update coreData model
@@ -148,7 +148,7 @@ int const ProjectsDetailTextFieldCount = 3;
         // new project
         
         // Find all Projects
-        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Projects" inManagedObjectContext:context];
+        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Events" inManagedObjectContext:context];
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
         [request setEntity:entityDescription];
         NSError *error;
@@ -160,18 +160,18 @@ int const ProjectsDetailTextFieldCount = 3;
         } else {
             // compile local array
             for (NSManagedObject *oneObject in objects) {
-                [projectIDArray addObject:[oneObject valueForKey:@"kp_ProjectID"]];
+                [projectIDArray addObject:[oneObject valueForKey:@"kp_classID"]];
             }
         }
-
-             
+        
+        
         NSManagedObject *theLine = nil;
-        theLine = [NSEntityDescription insertNewObjectForEntityForName:@"Projects" inManagedObjectContext:context];
+        theLine = [NSEntityDescription insertNewObjectForEntityForName:@"Events" inManagedObjectContext:context];
         
         // title
         int existingCount = [projectIDArray count];
-        [theLine setValue:[NSNumber numberWithInt:existingCount + 1] forKey:@"kp_ProjectID"];
-        [theLine setValue:titleField.text forKey:@"projectTitle"];
+        [theLine setValue:[NSNumber numberWithInt:existingCount + 1] forKey:@"kp_classID"];
+        [theLine setValue:titleField.text forKey:@"eventName"];
         
         // convert string to date
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -186,18 +186,18 @@ int const ProjectsDetailTextFieldCount = 3;
         [theLine setValue:dateFromString forKey:@"startDate"];
         
         // dueDate
-        dateFromString = [dateFormatter dateFromString:dueDateField.text];
-        [theLine setValue:dateFromString forKey:@"dueDate"];
+        dateFromString = [dateFormatter dateFromString:endDateField.text];
+        [theLine setValue:dateFromString forKey:@"endDate"];
         
         [context save:&error];
     } else {
         // save/update existing record
         
-        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Projects" inManagedObjectContext:context];
+        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Events" inManagedObjectContext:context];
         
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
         [request setEntity:entityDescription];
-        NSPredicate *pred = [NSPredicate predicateWithFormat:@"(kp_ProjectID = %d)", incomingRow];
+        NSPredicate *pred = [NSPredicate predicateWithFormat:@"(kp_classID = %d)", incomingRow];
         [request setPredicate:pred];
         [request setEntity:entityDescription];
         
@@ -207,8 +207,8 @@ int const ProjectsDetailTextFieldCount = 3;
             NSLog(@"(save)There was an error finding the ID!");
         }
         NSManagedObject *theData = [objects objectAtIndex:0];
-        [theData setValue:[NSNumber numberWithInt:incomingRow] forKey:@"kp_ProjectID"];
-        [theData setValue:titleField.text forKey:@"projectTitle"];
+        [theData setValue:[NSNumber numberWithInt:incomingRow] forKey:@"kp_classID"];
+        [theData setValue:titleField.text forKey:@"eventName"];
         
         // convert dates to strings
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -221,8 +221,8 @@ int const ProjectsDetailTextFieldCount = 3;
         dateFromString = [dateFormatter dateFromString:startDateField.text];
         [theData setValue:dateFromString forKey:@"startDate"];
         
-        dateFromString = [dateFormatter dateFromString:dueDateField.text];
-        [theData setValue:dateFromString forKey:@"dueDate"];
+        dateFromString = [dateFormatter dateFromString:endDateField.text];
+        [theData setValue:dateFromString forKey:@"endDate"];
         
         [context save:&error];
     }    
@@ -263,7 +263,7 @@ int const ProjectsDetailTextFieldCount = 3;
             [self showDatePicker:textField];
             break;
             
-        case 2:                     // dueDateField
+        case 2:                     // endDateField
             needsKeyboard = NO;
             [self showDatePicker:textField];
             break;
@@ -296,11 +296,11 @@ int const ProjectsDetailTextFieldCount = 3;
         // Load data from CoreData into local Model
         ButlerAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
         NSManagedObjectContext *context = [appDelegate managedObjectContext];
-        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Projects" inManagedObjectContext:context];
+        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Events" inManagedObjectContext:context];
         
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
         [request setEntity:entityDescription];
-        NSPredicate *pred = [NSPredicate predicateWithFormat:@"(kp_ProjectID = %d)", incomingRow];
+        NSPredicate *pred = [NSPredicate predicateWithFormat:@"(kp_classID = %d)", incomingRow];
         [request setPredicate:pred];
         [request setEntity:entityDescription];
         
@@ -312,30 +312,30 @@ int const ProjectsDetailTextFieldCount = 3;
             
             // compile local array
             for (NSManagedObject *oneObject in objects) {
-                projectID = [oneObject valueForKey:@"kp_ProjectID"];
-                projectTitle = [oneObject valueForKey:@"projectTitle"];
+                classID = [oneObject valueForKey:@"kp_classID"];
+                className = [oneObject valueForKey:@"eventName"];
                 
                 NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
                 [dateFormat setDateFormat:@"MM/dd/yy"];
                 NSString *dateString = [dateFormat stringFromDate:[oneObject valueForKey:@"startDate"]];
-                projectStartDate = dateString;
-                dateString = [dateFormat stringFromDate:[oneObject valueForKey:@"dueDate"]];
-                projectDueDate = dateString;
+                classStartDate = dateString;
+                dateString = [dateFormat stringFromDate:[oneObject valueForKey:@"endDate"]];
+                classEndDate = dateString;
             }
         }
         
         // configure static cells...
-        titleField.text = projectTitle;
-        startDateField.text = projectStartDate;
-        dueDateField.text = projectDueDate;
+        titleField.text = className;
+        startDateField.text = classStartDate;
+        endDateField.text = classEndDate;
         
         
         // capture initial values (for edit.cancel)
-        textFieldOriginalValues = [[NSMutableArray alloc] initWithCapacity:ProjectsDetailTextFieldCount];
+        textFieldOriginalValues = [[NSMutableArray alloc] initWithCapacity:ScheduleDetailTextFieldCount];
         // initialize our array
-        [textFieldOriginalValues addObject:projectTitle];
-        [textFieldOriginalValues addObject:projectStartDate];
-        [textFieldOriginalValues addObject:projectDueDate];
+        [textFieldOriginalValues addObject:className];
+        [textFieldOriginalValues addObject:classStartDate];
+        [textFieldOriginalValues addObject:classEndDate];
     }
     
     // Store left Nav button so that Cancel can restore it

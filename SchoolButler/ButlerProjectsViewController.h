@@ -9,8 +9,14 @@
 
 @interface ButlerProjectsViewController : UITableViewController <UITableViewDataSource>
 
+// coreData
 @property (nonatomic, strong) NSMutableArray *projectIDArray;
 @property (nonatomic, strong) NSMutableArray *projectTitleArray;
 @property (nonatomic, strong) NSMutableArray *projectDueDateArray;
+
+// local ivars
+@property BOOL addProjectFlag;
+
+- (IBAction)handleAddButton:(id)sender;
 
 @end

@@ -1,5 +1,5 @@
 //
-//  ButlerProjectsDetailViewController.h
+//  ButlerClassDetailViewController.h
 //  SchoolButler
 //
 //  Created by Leland Long on 8/25/12.
@@ -7,12 +7,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ButlerProjectsDetailViewController : UITableViewController <UITableViewDelegate, UITextFieldDelegate, UIActionSheetDelegate, UIPickerViewDelegate>
+@interface ButlerClassDetailViewController : UITableViewController <UITableViewDelegate, UITextFieldDelegate, UIActionSheetDelegate, UIPickerViewDelegate>
 
 // tableView
 @property (nonatomic, strong) IBOutlet UITextField *titleField;
 @property (nonatomic, strong) IBOutlet UITextField *startDateField;
-@property (nonatomic, strong) IBOutlet UITextField *dueDateField;
+@property (nonatomic, strong) IBOutlet UITextField *endDateField;
 
 // local ivars
 @property NSInteger incomingRow;
@@ -22,9 +22,9 @@
 @property (nonatomic, strong) UIDatePicker *datePicker;
 
 // coreData
-@property (nonatomic, strong) NSString *projectID;
-@property (nonatomic, strong) NSString *projectTitle;
-@property (nonatomic, strong) NSString *projectStartDate;
-@property (nonatomic, strong) NSString *projectDueDate;
+@property (nonatomic, strong) NSString *classID;
+@property (nonatomic, strong) NSString *classTitle;
+@property (nonatomic, strong) NSString *classStartDate;
+@property (nonatomic, strong) NSString *classEndDate;
 
 @end

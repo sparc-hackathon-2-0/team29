@@ -30,6 +30,14 @@
 		8471567815E924A200C15D2C /* ButlerScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8471567415E924A200C15D2C /* ButlerScheduleViewController.m */; };
 		8471567915E924A200C15D2C /* ButlerTranscriptsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8471567615E924A200C15D2C /* ButlerTranscriptsViewController.m */; };
 		8471568015E930A100C15D2C /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8471567E15E930A100C15D2C /* CoreDataModel.xcdatamodeld */; };
+		8494D61315E99B9A0013E705 /* ButlerEventsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8494D61215E99B9A0013E705 /* ButlerEventsDetailViewController.m */; };
+		8494D61715E99FBA0013E705 /* ButlerScheduleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8494D61615E99FBA0013E705 /* ButlerScheduleDetailViewController.m */; };
+		8494D61A15E9A5140013E705 /* ButlerClassDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8494D61915E9A5140013E705 /* ButlerClassDetailViewController.m */; };
+		8494D61C15E9A8870013E705 /* HRRQTabIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8494D61B15E9A8870013E705 /* HRRQTabIcon.png */; };
+		8494D61E15E9A8990013E705 /* ExpTabIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8494D61D15E9A8990013E705 /* ExpTabIcon.png */; };
+		8494D62015E9A8AA0013E705 /* ITRQTabIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8494D61F15E9A8AA0013E705 /* ITRQTabIcon.png */; };
+		8494D62215E9A8B30013E705 /* LvRequestTabIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8494D62115E9A8B30013E705 /* LvRequestTabIcon.png */; };
+		8494D62415E9A8BA0013E705 /* TimeSheetTabIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8494D62315E9A8BA0013E705 /* TimeSheetTabIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +74,17 @@
 		8471567515E924A200C15D2C /* ButlerTranscriptsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButlerTranscriptsViewController.h; sourceTree = "<group>"; };
 		8471567615E924A200C15D2C /* ButlerTranscriptsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButlerTranscriptsViewController.m; sourceTree = "<group>"; };
 		8471567F15E930A100C15D2C /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		8494D61115E99B9A0013E705 /* ButlerEventsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButlerEventsDetailViewController.h; sourceTree = "<group>"; };
+		8494D61215E99B9A0013E705 /* ButlerEventsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButlerEventsDetailViewController.m; sourceTree = "<group>"; };
+		8494D61515E99FBA0013E705 /* ButlerScheduleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButlerScheduleDetailViewController.h; sourceTree = "<group>"; };
+		8494D61615E99FBA0013E705 /* ButlerScheduleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButlerScheduleDetailViewController.m; sourceTree = "<group>"; };
+		8494D61815E9A5140013E705 /* ButlerClassDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButlerClassDetailViewController.h; sourceTree = "<group>"; };
+		8494D61915E9A5140013E705 /* ButlerClassDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButlerClassDetailViewController.m; sourceTree = "<group>"; };
+		8494D61B15E9A8870013E705 /* HRRQTabIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HRRQTabIcon.png; sourceTree = "<group>"; };
+		8494D61D15E9A8990013E705 /* ExpTabIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ExpTabIcon.png; sourceTree = "<group>"; };
+		8494D61F15E9A8AA0013E705 /* ITRQTabIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ITRQTabIcon.png; sourceTree = "<group>"; };
+		8494D62115E9A8B30013E705 /* LvRequestTabIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LvRequestTabIcon.png; sourceTree = "<group>"; };
+		8494D62315E9A8BA0013E705 /* TimeSheetTabIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimeSheetTabIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,10 +147,16 @@
 				84092CF715E968B300FE68D9 /* ButlerProjectsDetailViewController.m */,
 				8471565015E919F700C15D2C /* ButlerEventsViewController.h */,
 				8471565115E919F700C15D2C /* ButlerEventsViewController.m */,
+				8494D61115E99B9A0013E705 /* ButlerEventsDetailViewController.h */,
+				8494D61215E99B9A0013E705 /* ButlerEventsDetailViewController.m */,
 				8471567315E924A200C15D2C /* ButlerScheduleViewController.h */,
 				8471567415E924A200C15D2C /* ButlerScheduleViewController.m */,
+				8494D61515E99FBA0013E705 /* ButlerScheduleDetailViewController.h */,
+				8494D61615E99FBA0013E705 /* ButlerScheduleDetailViewController.m */,
 				8471567115E924A200C15D2C /* ButlerClassesViewController.h */,
 				8471567215E924A200C15D2C /* ButlerClassesViewController.m */,
+				8494D61815E9A5140013E705 /* ButlerClassDetailViewController.h */,
+				8494D61915E9A5140013E705 /* ButlerClassDetailViewController.m */,
 				8471567515E924A200C15D2C /* ButlerTranscriptsViewController.h */,
 				8471567615E924A200C15D2C /* ButlerTranscriptsViewController.m */,
 				8471563B15E919F700C15D2C /* Supporting Files */,
@@ -154,6 +179,11 @@
 		8471566B15E9235A00C15D2C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8494D62315E9A8BA0013E705 /* TimeSheetTabIcon.png */,
+				8494D62115E9A8B30013E705 /* LvRequestTabIcon.png */,
+				8494D61F15E9A8AA0013E705 /* ITRQTabIcon.png */,
+				8494D61D15E9A8990013E705 /* ExpTabIcon.png */,
+				8494D61B15E9A8870013E705 /* HRRQTabIcon.png */,
 				8471564C15E919F700C15D2C /* first.png */,
 				8471564E15E919F700C15D2C /* first@2x.png */,
 				8471565315E919F700C15D2C /* second.png */,
@@ -223,6 +253,11 @@
 				8471566115E91C6A00C15D2C /* Default@2x.png in Resources */,
 				8471566315E91D6800C15D2C /* Icon_reg.png in Resources */,
 				8471566515E91D8A00C15D2C /* Icon_ret.png in Resources */,
+				8494D61C15E9A8870013E705 /* HRRQTabIcon.png in Resources */,
+				8494D61E15E9A8990013E705 /* ExpTabIcon.png in Resources */,
+				8494D62015E9A8AA0013E705 /* ITRQTabIcon.png in Resources */,
+				8494D62215E9A8B30013E705 /* LvRequestTabIcon.png in Resources */,
+				8494D62415E9A8BA0013E705 /* TimeSheetTabIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +277,9 @@
 				8471567915E924A200C15D2C /* ButlerTranscriptsViewController.m in Sources */,
 				8471568015E930A100C15D2C /* CoreDataModel.xcdatamodeld in Sources */,
 				84092CF815E968B300FE68D9 /* ButlerProjectsDetailViewController.m in Sources */,
+				8494D61315E99B9A0013E705 /* ButlerEventsDetailViewController.m in Sources */,
+				8494D61715E99FBA0013E705 /* ButlerScheduleDetailViewController.m in Sources */,
+				8494D61A15E9A5140013E705 /* ButlerClassDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
